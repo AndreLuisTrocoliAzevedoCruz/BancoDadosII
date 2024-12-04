@@ -1,0 +1,49 @@
+1. História de Usuário: Gerenciamento de Perfis
+Como administrador,
+Eu quero poder atribuir diferentes perfis (como "GESTOR", "ADMINISTRADOR", "PROFESSOR") aos usuários,
+Para que eu possa controlar o nível de acesso e as permissões no sistema.
+
+2. História de Usuário: Visualização de Espaços Disponíveis
+Como usuário,
+Eu quero poder visualizar a lista de espaços disponíveis para reserva,
+Para que eu possa escolher o melhor local para minha atividade com base na disponibilidade e no tipo de espaço (como auditório, sala de aula, etc.).
+
+3. História de Usuário: Realização de Solicitação de Reserva
+Como usuário,
+Eu quero poder fazer uma solicitação de reserva de um espaço físico,
+Para que eu possa garantir a disponibilidade de um local para um evento ou atividade em uma data e horário específicos.
+
+4. História de Usuário: Avaliação da Solicitação de Reserva
+Como avaliador,
+Eu quero poder avaliar as solicitações de reserva, marcando-as como "Aprovada", "Rejeitada" ou "Pendente",
+Para que eu possa gerenciar de maneira eficaz o uso dos espaços, garantindo que as reservas atendam aos critérios estabelecidos.
+
+5. História de Usuário: Visualização do Histórico de Reservas
+Como usuário ou avaliador,
+Eu quero visualizar o histórico de todas as minhas reservas ou as reservas de outros usuários,
+Para que eu possa acompanhar as solicitações passadas, o status de cada uma (aprovada, rejeitada, pendente) e tomar decisões informadas para futuras solicitações.
+
+6. História de Usuário: Controle de Horários e Sobreposição de Reservas
+Como sistema,
+Eu quero verificar se há sobreposição de reservas antes de uma nova solicitação ser criada,
+Para que eu possa garantir que não haja conflitos de horário entre as reservas de espaços, e que todas as reservas ocorram dentro do horário permitido (das 07:00 às 22:00).
+
+7. História de Usuário: Validação de Feriados e Horários
+Como sistema,
+Eu quero verificar se uma solicitação de reserva cai em um feriado ou fora do horário permitido,
+Para que eu possa rejeitar automaticamente a solicitação e garantir que as reservas só possam ser feitas dentro dos períodos válidos.
+
+8. História de Usuário: Auditoria de Ações no Sistema
+Como administrador,
+Eu quero ter um log de auditoria das ações realizadas pelos usuários, como mudanças de status de reservas e atribuição de perfis,
+Para que eu possa monitorar as atividades no sistema e garantir a segurança e conformidade com as políticas internas.
+
+9. História de Usuário: Atribuição Automática de Avaliador
+Como sistema,
+Eu quero atribuir automaticamente os usuários com perfil de "GESTOR" ou "ADMINISTRADOR" como avaliadores,
+Para que eu possa garantir que os avaliadores sejam sempre os usuários com a responsabilidade de gerenciar as solicitações de reserva.
+
+10. História de Usuário: Exclusão de Solicitações de Reserva
+Como sistema,
+Eu quero garantir que, caso um espaço seja excluído ou não esteja mais disponível, todas as reservas relacionadas a esse espaço sejam canceladas automaticamente,
+Para que eu possa manter o sistema atualizado e garantir que não haja reservas inválidas ou impossíveis de serem atendidas.

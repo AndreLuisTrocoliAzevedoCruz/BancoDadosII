@@ -1,0 +1,92 @@
+-- Inserção de Usuários
+INSERT INTO Usuarios (nome, email)
+VALUES
+    ('Lucas Pereira', 'lucas.pereira@example.com'),
+    ('Mariana Gomes', 'mariana.gomes@example.com'),
+    ('Rafael Lima', 'rafael.lima@example.com');
+
+-- Inserção de Perfis
+INSERT INTO Perfis (id_usuario, perfil)
+VALUES
+    (1, 'ALUNO'), 
+    (1, 'PROFESSOR'),
+    (2, 'GESTOR');
+
+-- Inserção de Feriados
+INSERT INTO Feriados (nome, data)
+VALUES
+    ('Dia da Independência', '2024-09-07'),
+    ('Dia de Finados', '2024-11-02'),
+    ('Natal', '2024-12-25');
+
+-- Inserção de Equipamentos
+INSERT INTO Equipamentos (nome)
+VALUES
+    ('Cadeira Ergonômica'),
+    ('Impressora a Laser'),
+    ('Projetor Laser');
+
+-- Inserção de Espaços Físicos
+INSERT INTO Espacos_fisicos (nome, tipo, metragem, disponibilidade)
+VALUES
+    ('Sala de Conferências', 'Sala', 35.00, 'DISPONIVEL'),
+    ('Área Externa para Eventos', 'Espaço Externo', 300.00, 'DISPONIVEL'),
+    ('Laboratório de Informática', 'Laboratório', 50.00, 'DISPONIVEL');
+
+-- Inserção de Espaços Equipamentos
+INSERT INTO Espacos_Equipamentos (id, equipamento_id)
+VALUES
+    (1, 3),
+    (2, 2),
+    (3, 1);
+-- Exibe todos os dados da tabela Usuarios
+SELECT * FROM Usuarios;
+
+-- Exibe todos os dados da tabela Perfis
+SELECT * FROM Perfis;
+
+-- Exibe todos os dados da tabela Espacos_fisicos
+SELECT * FROM Espacos_fisicos;
+
+-- Exibe todos os dados da tabela Equipamentos
+SELECT * FROM Equipamentos;
+
+-- Exibe todos os dados da tabela Espacos_Equipamentos
+SELECT * FROM Espacos_Equipamentos;
+
+-- Exibe todos os dados da tabela Solicitacoes
+SELECT * FROM Solicitacoes;
+
+-- Exibe todos os dados da tabela Auditoria
+SELECT * FROM Auditoria;
+
+-- Exibe todos os dados da tabela Feriados
+SELECT * FROM Feriados;
+-- Exibe todas as tabelas no banco de dados
+SELECT table_name
+FROM information_schema.tables
+WHERE table_schema = 'public';
+-- Conta quantos registros existem em cada tabela
+SELECT 'Usuarios' AS tabela, COUNT() AS quantidade FROM Usuarios
+UNION ALL
+SELECT 'Perfis', COUNT() FROM Perfis
+UNION ALL
+SELECT 'Espacos_fisicos', COUNT() FROM Espacos_fisicos
+UNION ALL
+SELECT 'Equipamentos', COUNT() FROM Equipamentos
+UNION ALL
+SELECT 'Espacos_Equipamentos', COUNT() FROM Espacos_Equipamentos
+UNION ALL
+SELECT 'Solicitacoes', COUNT() FROM Solicitacoes
+UNION ALL
+SELECT 'Auditoria', COUNT() FROM Auditoria
+UNION ALL
+SELECT 'Feriados', COUNT() FROM Feriados;
+-- Exibe todas as solicitações com o status 'PENDENTE'
+SELECT * FROM Solicitacoes WHERE status = 'PENDENTE';
+
+-- Exibe todas as solicitações com o status 'APROVADA'
+SELECT * FROM Solicitacoes WHERE status = 'APROVADA';
+
+-- Exibe todas as solicitações com o status 'REJEITADA'
+SELECT * FROM Solicitacoes WHERE status = 'REJEITADA';

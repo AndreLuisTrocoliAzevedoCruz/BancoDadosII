@@ -1,0 +1,67 @@
+Table Usuarios {
+    id serial [pk]
+    nome varchar(100) [not null]
+    email varchar(100) [unique, not null]
+}
+
+Table Perfis {
+    id_usuario int [ref: > Usuarios.id]
+    perfil varchar(50) [not null]
+    primary key (id_usuario, perfil)
+}
+
+Table Espacos_fisicos {
+    id serial [pk]
+    nome varchar(100) [not null]
+    tipo varchar(50) [not null]
+    metragem numeric(5,2) [not null]
+    disponibilidade varchar(25) [not null]
+	
+}
+
+Table Equipamentos {
+    id serial [pk]
+    nome varchar(200) [not null]
+}
+
+Table Espacos_Equipamentos {
+    id int [ref: > Espacos_fisicos.id]
+    equipamento_id int [ref: > Equipamentos.id]
+    primary key (id, equipamento_id)
+}
+
+Table Avaliador {
+    id serial [pk]
+    id_usuario int [ref: > Usuarios.id]
+}
+
+Table Solicitacoes {
+    id serial [pk]
+    id_espaco int [ref: > Espacos_fisicos.id]
+    id_solicitante int [ref: > Usuarios.id]
+    id_avaliador int [ref: > Avaliador.id]
+    nome varchar(255) [not null]
+    data_inicio timestamp [not null]
+    data_fim timestamp [not null]
+    hora_inicio time [not null]
+    hora_fim time [not null]
+    data_solicitacao timestamp [not null]
+    data_avaliacao timestamp
+    status varchar(50) [not null]
+    justificativa text
+}
+
+Table Auditoria {
+    id serial [pk]
+    id_usuario int [ref: > Usuarios.id]
+    acao varchar(255) [not null]
+    data timestamp [not null, default: 'CURRENT_TIMESTAMP']
+    detalhes text
+}
+
+Table Feriados {
+    id serial [pk]
+    nome varchar(255) [not null]
+    data date [not null, unique]
+}
+
